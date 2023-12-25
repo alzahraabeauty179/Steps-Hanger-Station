@@ -8,19 +8,19 @@ else $cartItems = \App\Models\Cart::where(["IP_ADDRESS"=> \Request::ip() , "stat
 $checkout_total_price =0;
 foreach ($cartItems as $cartItem){
 
-    $cartItem->meal_image = $cartItem->meal->meal_image;
-    $cartItem->meal_name = $cartItem->meal->mealName();
+    $cartItem->meal_image = $cartItem?->meal?->meal_image;
+    $cartItem->meal_name = $cartItem?->meal?->mealName();
     $checkout_total_price += $cartItem->total_price;
 }
 ?>
 @php($settings = \App\Models\Setting::first())
 <style>
     #main-menu ul li a:hover{
-        color: {{$settings->theme_colour}};
+        color: {{$settings?->theme_colour}};
     }
 
     #shop_cart>a>i:hover{
-        color: {{$settings->theme_colour}};
+        color: {{$settings?->theme_colour}};
     }
 </style>
 
@@ -98,7 +98,7 @@ foreach ($cartItems as $cartItem){
 
         <!-- Top Cart
                       ============================================= -->
-        <div id="shop_cart" > <a href="#" id="shop_tigger"><i class="fa fa-shopping-cart"></i><span class="cart_count" style="background-color: {{$settings->theme_colour}}">{{count($cartItems)}}</span></a>
+        <div id="shop_cart" > <a href="#" id="shop_tigger"><i class="fa fa-shopping-cart"></i><span class="cart_count" style="background-color: {{$settings?->theme_colour}}">{{count($cartItems)}}</span></a>
           <div class="shop_cart_content">
             <h4>{{__('menu.Your Cart')}}</h4>
 
@@ -115,7 +115,7 @@ foreach ($cartItems as $cartItem){
 
             <!-- End cart items -->
                   <div class="shop_action clearfix"> <span class="shop_checkout_price" style="color: #ffffff">{{$checkout_total_price}} {{__('menu.SAR')}}</span>
-                      <button class="btn  white" style="background-color: {{$settings->theme_colour}}"><a href="{{route('cart')}}" style="color:white;">{{__('menu.View Cart')}}</a></button>
+                      <button class="btn  white" style="background-color: {{$settings?->theme_colour}}"><a href="{{route('cart')}}" style="color:white;">{{__('menu.View Cart')}}</a></button>
           </div>
           <!-- End shop cart content -->
 

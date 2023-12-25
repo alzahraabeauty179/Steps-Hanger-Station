@@ -14,28 +14,28 @@
     ============================================= -->
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
 
- <footer id="footer" class="padding-50 "   style="background-color:{{$settings->theme_colour}};color: white;">
+ <footer id="footer" class="padding-50 "   style="background-color:{{$settings?->theme_colour}};color: white;">
             <div class="container">
               <div class="row">
                 <!-- Our location !-->
                 <div class="col-md-3 col-sm-6 col-xs-12 our_location">
                   <h3>{{__('menu.HeadQuarter Location')}}</h3>
-                  <p>{{$settings->resName()}} {{__('menu.Head Office')}}:</p>
-                  <span>{{$settings->location()}}</span>
-                  <p class="mt30">{{__('menu.Call for Reservations')}}:<span >{{$settings->phone}}</span></p>
-                  <p>{{__('menu.E-mail')}}: <span>{{$settings->email}}</span> </p>
+                  <p>{{$settings?->resName()}} {{__('menu.Head Office')}}:</p>
+                  <span>{{$settings?->location()}}</span>
+                  <p class="mt30">{{__('menu.Call for Reservations')}}:<span >{{$settings?->phone}}</span></p>
+                  <p>{{__('menu.E-mail')}}: <span>{{$settings?->email}}</span> </p>
                   <ul class="social mt30">
-                    <li><a href="{{$settings->facebook}}" target="_blank" data-toggle="tooltip" title="Facebook" style="background-color: {{$settings->text_colour}}"><i class="fab fa-facebook" ></i></a></li>
-                    <li><a href="{{$settings->twitter}}" target="_blank" data-toggle="tooltip" title="Twitter" style="background-color: {{$settings->text_colour}}"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="{{$settings->instagram}}" target="_blank" data-toggle="tooltip" title="Instgram" style="background-color: {{$settings->text_colour}}"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="{{$settings->youtube}}" target="_blank" data-toggle="tooltip" title="Youtube" style="background-color: {{$settings->text_colour}}"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="{{$settings?->facebook}}" target="_blank" data-toggle="tooltip" title="Facebook" style="background-color: {{$settings?->text_colour}}"><i class="fab fa-facebook" ></i></a></li>
+                    <li><a href="{{$settings?->twitter}}" target="_blank" data-toggle="tooltip" title="Twitter" style="background-color: {{$settings?->text_colour}}"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="{{$settings?->instagram}}" target="_blank" data-toggle="tooltip" title="Instgram" style="background-color: {{$settings?->text_colour}}"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="{{$settings?->youtube}}" target="_blank" data-toggle="tooltip" title="Youtube" style="background-color: {{$settings?->text_colour}}"><i class="fab fa-youtube"></i></a></li>
                   </ul>
                 </div>
                 <!-- End our location -->
                 <!-- Latest Post !-->
                 <div class="col-md-3 col-sm-6 col-xs-12 latest_post ">
                   <h3>{{__('menu.Branches')}}</h3>
-                    @foreach($branches as $branch)
+                    @foreach($branches?? [] as $branch)
                   <div class="media">
                     {{-- <div class="media-left"> <a href="blog_single_image.html" > <img class="media-object" rel="prettyPhoto" src="img/post_thumb.jpg" alt="post thumb"> </a> </div> --}}
                     <div class="media-body" style="color:#ededed" >
@@ -57,7 +57,7 @@
    <p>
 
        {{__('menu.from')}}
-       <time datetime="00:01" style="float: initial">  {{date('h:i A' , strtotime($settings->cat_time_from_1))}}  </time>
+       <time datetime="00:01" style="float: initial">  {{date('h:i A' , strtotime($settings?->cat_time_from_1))}}  </time>
    </p>
 
 
@@ -69,7 +69,7 @@
                           <p>
 
                               {{__('menu.to')}}
-                              <time datetime="00:01" style="float: initial">  {{date('h:i A' , strtotime($settings->cat_time_to_4))}}  </time>
+                              <time datetime="00:01" style="float: initial">  {{date('h:i A' , strtotime($settings?->cat_time_to_4))}}  </time>
                           </p>
 
 
@@ -81,7 +81,7 @@
                   <div class="col-md-3 col-sm-6 col-xs-12 opening_time">
                       <h3>{{__('menu.Working Days')}}</h3>
                       <ul>
-                          @foreach(json_decode($settings->opening_days) as $day)
+                          @foreach(json_decode($settings?->opening_days)?? [] as $day)
                               <li>
                                   <p>{{__('menu.'.$day)}}
 
@@ -104,15 +104,15 @@
             </div>
             <!-- End container -->
             <!-- Footer logo !-->
-            <div class="footer_logo text-center"> <img  src="{{$settings->footer_logo}}"  alt="logo" style="width:85px;background-color: {{$settings->theme_colour}}">
-              <p> {{__('menu.ALL RIGHT RESERVED FOR')}} | {{$settings->resName()}} © {{date("Y")}}</p>
+            <div class="footer_logo text-center"> <img  src="{{$settings?->footer_logo}}"  alt="logo" style="width:85px;background-color: {{$settings?->theme_colour}}">
+              <p> {{__('menu.ALL RIGHT RESERVED FOR')}} | {{$settings?->resName()}} © {{date("Y")}}</p>
             </div>
             <!-- End Footer logo !-->
 
           </footer>
           <!-- End footer -->
           <!--  scroll to top of the page-->
-          <a href="#" id="scroll_up" style="background: {{$settings->theme_colour}}"><i class="fa fa-angle-up"></i></a> </div>
+          <a href="#" id="scroll_up" style="background: {{$settings?->theme_colour}}"><i class="fa fa-angle-up"></i></a> </div>
         <!-- End wrapper -->
         <!-- Core JS Libraries -->
 

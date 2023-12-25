@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTransactionsTable extends Migration
+class CreateCartsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,19 @@ class CreateTransactionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('transactions', function (Blueprint $table) {
-            
-            $table->string('id')->primary();
-            $table->integer('user_id');
-            $table->string('checkout_id')->unique();
-            $table->string('status');
-            $table->float('amount');
-            $table->string('currency');
-            $table->json('data')->nullable();
-            $table->json('trackable_data');
-            $table->string('brand');
+        Schema::create('carts', function (Blueprint $table) {
+            $table->id();
 
+            $table->integer('meal_id');
+            $table->double('price');
+            $table->integer('quantity');
+            $table->double('total_price');
+            $table->integer('user_id');
+            $table->string('IP_ADDRESS');
+            $table->boolean('status');
+
+            // $table->foreign('meal_id')->references('id')->on('menu')
+            //     ->onUpdate('cascade')->onDelete('cascade');
             // $table->foreign('user_id')->references('id')->on('users')
             //     ->onUpdate('cascade')->onDelete('cascade');
 
@@ -39,6 +40,6 @@ class CreateTransactionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transactions');
+        Schema::dropIfExists('carts');
     }
 }

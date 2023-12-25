@@ -6,17 +6,17 @@
     <section  class="padding-100 welcome-block">
       <div class="container">
         <div class="row">
-          <div class="col-md-6"> <img class="img-responsive" src="{{asset($settings->about_image)}}" alt=""> </div>
+          <div class="col-md-6"> <img class="img-responsive" src="{{asset($settings?->about_image)}}" alt=""> </div>
           <!-- Intro message -->
           <div class="col-md-5 text-center intro_message mt40">
             <!-- Head Title -->
             <div class="head_title">
                 {{-- <i class="icon-intro"></i> --}}
-                <h1 style="color:{{$settings->text_colour}}">{{$settings->resName()}}</h1>
-                <span class="welcome"  style="color:{{$settings->text_colour}}"> {{__('menu.Welcome to')}}  </span>
+                <h1 style="color:{{$settings?->text_colour}}">{{$settings?->resName()}}</h1>
+                <span class="welcome"  style="color:{{$settings?->text_colour}}"> {{__('menu.Welcome to')}}  </span>
             </div>
             <!-- End# Head Title -->
-            <p style="color:#262626;text-align: justify">{{$settings->resDesc()}}</p>
+            <p style="color:#262626;text-align: justify">{{$settings?->resDesc()}}</p>
             {{-- <a href="about.html" class="btn btn-gold">READ MORE</a> </div> --}}
           <!-- End Intro message  -->
         </div>
@@ -28,7 +28,7 @@
 
     <!-- Food Date blocks
     ============================================= -->
-      @if($settings->cat_1 || $settings->cat_2 || $settings->cat_3 || $settings->cat_4)
+      @if($settings?->cat_1 || $settings?->cat_2 || $settings?->cat_3 || $settings?->cat_4)
     <section id="slide2-02" class="date-blocks dark text-center">
 
       <!-- Bg Parallax -->
@@ -37,7 +37,7 @@
         data-bottom-top="background-position: 50% 100px;"
         data-top-bottom="background-position: 50% -100px;"
         data-anchor-target="#slide2-02"
-           style="background-color:{{$settings->theme_colour}}"
+           style="background-color:{{$settings?->theme_colour}}"
     >
         <!-- Bg transparent -->
         <div class=" padding-100">
@@ -47,42 +47,42 @@
 
 
 
-                      @if($settings->cat_1)
+                      @if($settings?->cat_1)
                           <div class="col-md-3 col-sm-6 col-xs-12">
                               <!-- Block item -->
                               <div class="block-item"> <img src="{{url('img/_breakfast.png')}}" alt="" style="    width: 135px;">
-                                  <h3  style="color: white">{{$settings->catTitle1()}}</h3>
-                                  <p style="color: white">{{date('h:m A' , strtotime($settings->cat_time_from_1))}} - {{date('h:m A' , strtotime($settings->cat_time_to_1))}}</p>
+                                  <h3  style="color: white">{{$settings?->catTitle1()}}</h3>
+                                  <p style="color: white">{{date('h:m A' , strtotime($settings?->cat_time_from_1))}} - {{date('h:m A' , strtotime($settings?->cat_time_to_1))}}</p>
                               </div>
                               <!-- End Block item -->
                           </div>
                       @endif
-                      @if($settings->cat_2)
+                      @if($settings?->cat_2)
                           <div class="col-md-3 col-sm-6 col-xs-12">
                               <!-- Block item -->
                               <div class="block-item"> <img src="{{url('img/_lunch.png')}}" alt="" style="    width: 135px;">
-                                  <h3 style="color: white" >{{$settings->catTitle2()}}</h3>
-                                  <p style="color: white">{{date('h:m A' , strtotime($settings->cat_time_from_2))}} - {{date('h:m A' , strtotime($settings->cat_time_to_2))}}</p>
+                                  <h3 style="color: white" >{{$settings?->catTitle2()}}</h3>
+                                  <p style="color: white">{{date('h:m A' , strtotime($settings?->cat_time_from_2))}} - {{date('h:m A' , strtotime($settings?->cat_time_to_2))}}</p>
                               </div>
                               <!-- End Block item -->
                           </div>
                       @endif
-                      @if($settings->cat_3)
+                      @if($settings?->cat_3)
                           <div class="col-md-3 col-sm-6 col-xs-12">
                               <!-- Block item -->
                               <div class="block-item"> <img src="{{url('img/_dinner.png')}}" alt="" style="    width: 135px;">
-                                  <h3 style="color: white" >{{$settings->catTitle3()}}</h3>
-                                  <p style="color: white">{{date('h:m A' , strtotime($settings->cat_time_from_3))}} - {{date('h:m A' , strtotime($settings->cat_time_to_3))}}</p>
+                                  <h3 style="color: white" >{{$settings?->catTitle3()}}</h3>
+                                  <p style="color: white">{{date('h:m A' , strtotime($settings?->cat_time_from_3))}} - {{date('h:m A' , strtotime($settings?->cat_time_to_3))}}</p>
                               </div>
                               <!-- End Block item -->
                           </div>
                       @endif
-                      @if($settings->cat_4)
+                      @if($settings?->cat_4)
                           <div class="col-md-3 col-sm-6 col-xs-12">
                               <!-- Block item -->
                               <div class="block-item"> <img src="{{url('img/_dessert.png')}}" alt="" style="    width: 135px;">
-                                  <h3 style="color: white" >{{$settings->catTitle4()}}</h3>
-                                  <p style="color: white">{{date('h:m A' , strtotime($settings->cat_time_from_4))}} - {{date('h:m A' , strtotime($settings->cat_time_to_4))}}</p>
+                                  <h3 style="color: white" >{{$settings?->catTitle4()}}</h3>
+                                  <p style="color: white">{{date('h:m A' , strtotime($settings?->cat_time_from_4))}} - {{date('h:m A' , strtotime($settings?->cat_time_to_4))}}</p>
                               </div>
                               <!-- End Block item -->
                           </div>
@@ -105,13 +105,13 @@
       <!-- Head Title -->
         <div class="head_title">
             {{-- <i class="icon-intro"></i> --}}
-            <h1  style="color:{{$settings->text_colour}}"> {{__('menu.Menu Meals')}} {{$settings->resName()}}</h1>
+            <h1  style="color:{{$settings?->text_colour}}"> {{__('menu.Menu Meals')}} {{$settings?->resName()}}</h1>
             <span  class="welcome" style="color:#262626">Choose & Taste</span>
         </div>
         <!-- End# Head Title -->
 
       <!-- Menu Bar -->
-      <div class="menu-bar  mb60"    style="background-color:{{$settings->theme_colour}}">
+      <div class="menu-bar  mb60"    style="background-color:{{$settings?->theme_colour}}">
         <!-- menu Filter
                     ============================================= -->
         <ul id="menu-fillter" class="clearfix" style="direction: initial">
@@ -152,7 +152,7 @@
 {{--                    </fieldset>--}}
                     <!-- end Rating -->
                     <!-- Button -->
-                      <div class="button"> <a class="btn btn-gold" onclick="fireToasting('{{$meal}}')" data-toggle="tooltip" title="" data-original-title="Add to Cart" style="background-color: {{$settings->theme_colour}}"><i class="fa fa-shopping-cart" style="color: #ffffff"></i></a> <a class="btn btn-gold" href="{{url('/user/menu/meal/detail/'.$meal->id)}}"  data-toggle="tooltip" title="" data-original-title="MEAL DETAILS" style="background-color: {{$settings->theme_colour}};"><i class="fa fa-info-circle" style="color: #ffffff"></i>   <span class="tooltiptext" id="myTooltip"></span></a> </div>
+                      <div class="button"> <a class="btn btn-gold" onclick="fireToasting('{{$meal}}')" data-toggle="tooltip" title="" data-original-title="Add to Cart" style="background-color: {{$settings?->theme_colour}}"><i class="fa fa-shopping-cart" style="color: #ffffff"></i></a> <a class="btn btn-gold" href="{{url('/user/menu/meal/detail/'.$meal->id)}}"  data-toggle="tooltip" title="" data-original-title="MEAL DETAILS" style="background-color: {{$settings?->theme_colour}};"><i class="fa fa-info-circle" style="color: #ffffff"></i>   <span class="tooltiptext" id="myTooltip"></span></a> </div>
                     <!-- End Button -->
 
                     <a class="close-overlay hidden">x</a> </div>
@@ -228,11 +228,11 @@
 
                                 <div class="col-md-6 col-sm-6 col-sx-12 datepicker">
                                     <input name="reservation_date" class="form-control" id="" placeholder="YY-m-d"  data-date-format="YYYY MMMM DD "  type="date" required >
-{{--                                    <i class="fa fa-calendar" style="color: {{$settings->theme_colour}}"></i>--}}
+{{--                                    <i class="fa fa-calendar" style="color: {{$settings?->theme_colour}}"></i>--}}
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-sx-12 datepicker">
                                     <input name="time" class="form-control" id="" placeholder="Time" type="time"  required>
-{{--                                    <i class="fa fa-calendar" style="color: {{$settings->theme_colour}}"></i>--}}
+{{--                                    <i class="fa fa-calendar" style="color: {{$settings?->theme_colour}}"></i>--}}
                                 </div>
                             {{--                          <div class="col-md-6 col-sm-6 col-sx-12">--}}
                             <!-- Selct wrap -->
@@ -282,7 +282,7 @@
 
                 <div class="row element">
                   <div class="loading2"></div>
-                    <button class="btn btn-gold white"   onclick="reservation()" id="reser-submit" style="background-color:{{$settings->theme_colour}};margin-top: 25
+                    <button class="btn btn-gold white"   onclick="reservation()" id="reser-submit" style="background-color:{{$settings?->theme_colour}};margin-top: 25
 px; color: white">{{__('menu.BOOK YOUR TABLE')}}</button>
                 </div>
             </form>
@@ -306,9 +306,9 @@ px; color: white">{{__('menu.BOOK YOUR TABLE')}}</button>
     <section class="extra_touch padding-100 text-center">
       <div class="container">
         <div class="row">
-          <h2>{{__('menu.Come')}} {{__('menu.&')}} <span  style="color:{{$settings->text_colour}}">{{__('menu.Experiences')}}</span>
+          <h2>{{__('menu.Come')}} {{__('menu.&')}} <span  style="color:{{$settings?->text_colour}}">{{__('menu.Experiences')}}</span>
               {{__('menu.our best of world class cuisine')}}</h2>
-          <a href="{{url('/contact')}}" class="btn  btn-gold " style="background-color:{{$settings->theme_colour}};color:#EDEDED">{{__('menu.GET IN TOUCH')}}</a> </div>
+          <a href="{{url('/contact')}}" class="btn  btn-gold " style="background-color:{{$settings?->theme_colour}};color:#EDEDED">{{__('menu.GET IN TOUCH')}}</a> </div>
       </div>
     </section>
     <!-- End extra touch -->
