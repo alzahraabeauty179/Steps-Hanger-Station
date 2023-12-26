@@ -19,6 +19,10 @@ class Setting extends Model
     }
 
     public function scopeResDesc(){
+        if (is_null($this->{'restaurant_description_'.App::getLocale()})){
+            return App::getLocale() == 'en' ? 'No description has been added yet' : 'لم يتم اضافة وصف بعد';
+        }
+
         return $this->{'restaurant_description_'.App::getLocale()} ;
     }
 
