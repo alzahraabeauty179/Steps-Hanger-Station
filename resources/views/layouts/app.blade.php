@@ -24,13 +24,13 @@
      ============================================= -->
   <link rel="shortcut icon" href="{{$settings?->icon?? assert('img\tap_logo.png')}}">
   <!-- Standard iPhone Touch Icon-->
-  <link rel="apple-touch-icon" sizes="57x57" href="{{$settings?->header_logo?? assert('img\tap_logo.png')}}">
+  <link rel="apple-touch-icon" sizes="57x57" href="{{$settings?->header_logo?? 'img\tap_logo.png'}}">
   <!-- Retina iPhone Touch Icon-->
-  <link rel="apple-touch-icon" sizes="114x114" href="{{$settings?->header_logo?? assert('img\tap_logo.png')}}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{$settings?->header_logo?? 'img\tap_logo.png'}}">
   <!-- Standard iPad Touch Icon-->
-  <link rel="apple-touch-icon" sizes="72x72" href="{{$settings?->header_logo?? assert('img\tap_logo.png')}}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{$settings?->header_logo?? 'img\tap_logo.png'}}">
   <!-- Retina iPad Touch Icon-->
-  <link rel="apple-touch-icon" sizes="144x144" href="{{$settings?->header_logo?? assert('img\tap_logo.png')}}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{{$settings?->header_logo?? 'img\tap_logo.png'}}">
   <link rel="stylesheet" href="{{assert('/admin/vendors/iconic-fonts/flat-icons/flaticon.css')}}">
   <!-- Bootstrap Links
      ============================================= -->
@@ -82,37 +82,37 @@
     }
 
     ::selection {
-      background: {{ $settings?->theme_colour?? 'blue'}};
+      background: {{ $settings?->theme_colour?? '#301b72'}};
       color: #fff
     }
 
     ::-moz-selection {
-      background: {{$settings?->theme_colour?? 'blue'}};
+      background: {{$settings?->theme_colour?? '#301b72'}};
       color:#fff
     }
 
     ::-webkit-selection {
-      background: {{$settings?->theme_colour?? 'blue'}};
+      background: {{$settings?->theme_colour?? '#301b72'}};
       color:#fff
     }
 
     #header-sticky-wrapper.is-sticky #header #main-menu>ul>li.current>a,
     #header-sticky-wrapper.is-sticky #header #main-menu>ul>li>a:hover,
     #header-sticky-wrapper.is-sticky #header #shop_cart>a>i:hover {
-      color: {{$settings?->theme_colour?? 'blue'}};
+      color: {{$settings?->theme_colour?? '#301b72'}};
     }
 
     #shop_cart>a>i {
-      color: {{ $settings?->theme_colour?? 'blue'}};
+      color: {{ $settings?->theme_colour?? '#301b72'}};
     }
   </style>
   <style>
     #main-menu ul li a:hover {
-      color: "{{$settings?->theme_colour?? 'blue'}}";
+      color: "{{$settings?->theme_colour?? '#301b72'}}";
     }
 
     #shop_cart>a>i:hover {
-      color: "{{$settings?->theme_colour?? 'blue'}}";
+      color: "{{$settings?->theme_colour?? '#301b72'}}";
     }
   </style>
   <style>
@@ -156,11 +156,11 @@
   <div id="loader2">
     <div class="loader-item"> <img src="{{$settings?->logo?? assert('img/tap_logo.png')}}" alt="" style="width:225px">
       <div class="sk-spinner sk-spinner-wave">
-        <div class="sk-rect1" style="background-color:{{$settings?->theme_colour?? 'blue'}}"></div>
-        <div class="sk-rect2" style="background-color:{{$settings?->theme_colour?? 'blue'}}"></div>
-        <div class="sk-rect3" style="background-color:{{$settings?->theme_colour?? 'blue'}}"></div>
-        <div class="sk-rect4" style="background-color:{{$settings?->theme_colour?? 'blue'}}"></div>
-        <div class="sk-rect5" style="background-color:{{$settings?->theme_colour?? 'blue'}}"></div>
+        <div class="sk-rect1" style="background-color:{{$settings?->theme_colour?? '#301b72'}}"></div>
+        <div class="sk-rect2" style="background-color:{{$settings?->theme_colour?? '#301b72'}}"></div>
+        <div class="sk-rect3" style="background-color:{{$settings?->theme_colour?? '#301b72'}}"></div>
+        <div class="sk-rect4" style="background-color:{{$settings?->theme_colour?? '#301b72'}}"></div>
+        <div class="sk-rect5" style="background-color:{{$settings?->theme_colour?? '#301b72'}}"></div>
       </div>
     </div>
   </div>

@@ -35,7 +35,7 @@
   <!-- Bg Parallax -->
   <div class="bck " data-center="background-position: 50% 0px;" data-bottom-top="background-position: 50% 100px;"
     data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide2-02"
-    style="background-color:{{$settings?->theme_colour?? 'blue'}}">
+    style="background-color:{{$settings?->theme_colour?? '#301b72'}}">
     <!-- Bg transparent -->
     <div class=" padding-100">
       <div class="container">
@@ -102,13 +102,13 @@
   <!-- Head Title -->
   <div class="head_title">
     {{-- <i class="icon-intro"></i> --}}
-    <h1 style="color:{{$settings?->text_colour?? 'blue'}}"> {{__('menu.Menu Meals')}} {{$settings?->resName()?? 'Steps'}}</h1>
+    <h1 style="color:{{$settings?->text_colour?? '#301b72'}}"> {{__('menu.Menu Meals')}} {{$settings?->resName()?? 'Steps'}}</h1>
     <span class="welcome" style="color:#262626">Choose & Taste</span>
   </div>
   <!-- End# Head Title -->
 
   <!-- Menu Bar -->
-  <div class="menu-bar  mb60" style="background-color:{{$settings?->theme_colour?? 'blue'?? 'blue'}}">
+  <div class="menu-bar  mb60" style="background-color:{{$settings?->theme_colour?? '#301b72'?? '#301b72'}}">
     <!-- menu Filter
                     ============================================= -->
     <ul id="menu-fillter" class="clearfix" style="direction: initial">
@@ -156,10 +156,10 @@
                     <!-- Button -->
                     <div class="button"> <a class="btn btn-gold" onclick="fireToasting('{{$meal}}')" data-toggle="tooltip"
                         title="" data-original-title="Add to Cart"
-                        style="background-color: {{$settings?->theme_colour?? 'blue'}}"><i class="fa fa-shopping-cart"
+                        style="background-color: {{$settings?->theme_colour?? '#301b72'}}"><i class="fa fa-shopping-cart"
                           style="color: #ffffff"></i></a> <a class="btn btn-gold"
                         href="{{assert('/user/menu/meal/detail/'.$meal->id)}}" data-toggle="tooltip" title=""
-                        data-original-title="MEAL DETAILS" style="background-color: {{$settings?->theme_colour?? 'blue'}};"><i
+                        data-original-title="MEAL DETAILS" style="background-color: {{$settings?->theme_colour?? '#301b72'}};"><i
                           class="fa fa-info-circle" style="color: #ffffff"></i> <span class="tooltiptext"
                           id="myTooltip"></span></a> </div>
                     <!-- End Button -->
@@ -243,11 +243,11 @@
                       <div class="col-md-6 col-sm-6 col-sx-12 datepicker">
                         <input name="reservation_date" class="form-control" id="" placeholder="YY-m-d"
                           data-date-format="YYYY MMMM DD " type="date" required>
-                        {{-- <i class="fa fa-calendar" style="color: {{$settings?->theme_colour?? 'blue'}}"></i>--}}
+                        {{-- <i class="fa fa-calendar" style="color: {{$settings?->theme_colour?? '#301b72'}}"></i>--}}
                       </div>
                       <div class="col-md-6 col-sm-6 col-sx-12 datepicker">
                         <input name="time" class="form-control" id="" placeholder="Time" type="time" required>
-                        {{-- <i class="fa fa-calendar" style="color: {{$settings?->theme_colour?? 'blue'}}"></i>--}}
+                        {{-- <i class="fa fa-calendar" style="color: {{$settings?->theme_colour?? '#301b72'}}"></i>--}}
                       </div>
                       {{-- <div class="col-md-6 col-sm-6 col-sx-12">--}}
                         <!-- Selct wrap -->
@@ -298,7 +298,7 @@
 
             <div class="row element">
               <div class="loading2"></div>
-              <button class="btn btn-gold white" onclick="reservation()" id="reser-submit" style="background-color:{{$settings?->theme_colour?? 'blue'}};margin-top: 25
+              <button class="btn btn-gold white" onclick="reservation()" id="reser-submit" style="background-color:{{$settings?->theme_colour?? '#301b72'}};margin-top: 25
 px; color: white">{{__('menu.BOOK YOUR TABLE')}}</button>
             </div>
           </form>
@@ -326,7 +326,7 @@ px; color: white">{{__('menu.BOOK YOUR TABLE')}}</button>
           style="color:{{$settings?->text_colour}}">{{__('menu.Experiences')}}</span>
         {{__('menu.our best of world class cuisine')}}</h2>
       <a href="{{'/contact'}}" class="btn  btn-gold "
-        style="background-color:{{$settings?->theme_colour?? 'blue'}};color:#EDEDED">{{__('menu.GET IN TOUCH')}}</a>
+        style="background-color:{{$settings?->theme_colour?? '#301b72'}};color:#EDEDED">{{__('menu.GET IN TOUCH')}}</a>
     </div>
   </div>
 </section>

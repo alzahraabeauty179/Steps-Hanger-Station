@@ -98,7 +98,7 @@
 <!-- Top Cart
                       ============================================= -->
 <div id="shop_cart"> <a href="#" id="shop_tigger"><i class="fa fa-shopping-cart"></i><span class="cart_count"
-      style="background-color: {{$settings?->theme_colour?? 'blue'}}">{{count($cartItems)}}</span></a>
+      style="background-color: {{$settings?->theme_colour?? '#301b72'}}">{{count($cartItems)}}</span></a>
   <div class="shop_cart_content">
     <h4>{{__('menu.Your Cart')}}</h4>
 
@@ -119,7 +119,7 @@
     <!-- End cart items -->
     <div class="shop_action clearfix"> <span class="shop_checkout_price"
         style="color: #ffffff">{{$checkout_total_price}} {{__('menu.SAR')}}</span>
-      <button class="btn  white" style="background-color: {{$settings?->theme_colour?? 'blue'}}"><a href="{{route('cart')}}"
+      <button class="btn  white" style="background-color: {{$settings?->theme_colour?? '#301b72'}}"><a href="{{route('cart')}}"
           style="color:white;">{{__('menu.View Cart')}}</a></button>
     </div>
     <!-- End shop cart content -->
