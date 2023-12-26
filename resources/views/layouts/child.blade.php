@@ -8,8 +8,8 @@
     ============================================= -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="{{$settings->ResDesc()}}">
-<meta name="author" content="{{$settings->ResDesc()}}">
+<meta name="description" content="{{$settings?->ResDesc()}}">
+<meta name="author" content="{{$settings?->ResDesc()}}">
     <meta name="csrf-token" content="{{csrf_token()}} ">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
@@ -19,15 +19,15 @@
 <title>{{__('menu.'.$uri[0])}}</title>
 <!-- Favicon Icons
      ============================================= -->
-<link rel="shortcut icon" href="{{$settings->icon}}">
+<link rel="shortcut icon" href="{{$settings?->icon}}">
 <!-- Standard iPhone Touch Icon-->
-<link rel="apple-touch-icon" sizes="57x57" href="{{$settings->header_logo}}">
+<link rel="apple-touch-icon" sizes="57x57" href="{{$settings?->header_logo}}">
 <!-- Retina iPhone Touch Icon-->
-<link rel="apple-touch-icon" sizes="114x114" href="{{$settings->header_logo}}">
+<link rel="apple-touch-icon" sizes="114x114" href="{{$settings?->header_logo}}">
 <!-- Standard iPad Touch Icon-->
-<link rel="apple-touch-icon" sizes="72x72" href="{{$settings->header_logo}}">
+<link rel="apple-touch-icon" sizes="72x72" href="{{$settings?->header_logo}}">
 <!-- Retina iPad Touch Icon-->
-<link rel="apple-touch-icon" sizes="144x144" href="{{$settings->header_logo}}">
+<link rel="apple-touch-icon" sizes="144x144" href="{{$settings?->header_logo}}">
 <!-- Bootstrap Links
      ============================================= -->
 <!-- Bootstrap CSS  -->
@@ -176,20 +176,20 @@
 
         }
         ::selection {
-            background: {{$settings->theme_colour}};
+            background: {{$settings?->theme_colour}};
             color: #fff
         }
         ::-moz-selection {
-            background: {{$settings->theme_colour}};
+            background: {{$settings?->theme_colour}};
             color:#fff
         }
         ::-webkit-selection {
-            background: {{$settings->theme_colour}};
+            background: {{$settings?->theme_colour}};
             color:#fff
         }
 
         #header-sticky-wrapper.is-sticky #header #main-menu>ul>li.current>a, #header-sticky-wrapper.is-sticky #header #main-menu>ul>li>a:hover, #header-sticky-wrapper.is-sticky #header #shop_cart>a>i:hover {
-            color: {{$settings->theme_colour}}
+            color: {{$settings?->theme_colour}}
     }
     </style>
     <style>
@@ -200,7 +200,7 @@
     </style>
     <style>
         .date-block-dark .date-blocks .block-item{
-            border: 2px solid {{$settings->theme_colour}};
+            border: 2px solid {{$settings?->theme_colour}};
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         }
     </style>
@@ -298,7 +298,7 @@
     }
 
     #shop_cart>a>i{
-        color: {{$settings->theme_colour}};
+        color: {{$settings?->theme_colour}};
     }
 
 
@@ -322,13 +322,13 @@
     ============================================= -->
 
 <div id="loader2">
-    <div class="loader-item"> <img src="{{$settings->logo}}" alt="" style="width:225px">
+    <div class="loader-item"> <img src="{{$settings?->logo}}" alt="" style="width:225px">
         <div class="sk-spinner sk-spinner-wave">
-            <div class="sk-rect1" style="background-color:{{$settings->theme_colour}}"></div>
-            <div class="sk-rect2" style="background-color:{{$settings->theme_colour}}"></div>
-            <div class="sk-rect3" style="background-color:{{$settings->theme_colour}}"></div>
-            <div class="sk-rect4" style="background-color:{{$settings->theme_colour}}"></div>
-            <div class="sk-rect5"  style="background-color:{{$settings->theme_colour}}"></div>
+            <div class="sk-rect1" style="background-color:{{$settings?->theme_colour}}"></div>
+            <div class="sk-rect2" style="background-color:{{$settings?->theme_colour}}"></div>
+            <div class="sk-rect3" style="background-color:{{$settings?->theme_colour}}"></div>
+            <div class="sk-rect4" style="background-color:{{$settings?->theme_colour}}"></div>
+            <div class="sk-rect5"  style="background-color:{{$settings?->theme_colour}}"></div>
         </div>
     </div>
 </div>
@@ -344,7 +344,7 @@
                 data-bottom-top="background-position: 50% 100px;"
                 data-top-bottom="background-position: 50% -100px;"
                 data-anchor-target="#menu-parallax"
-                style="@if($pages->count() > 0) background-image:url({{$pages[1]->image}})@endif;"
+                style="@if($pages?->count() > 0) background-image:url({{$pages[1]?->image}})@endif;"
               >
         <div class="bg-transparent">
             <div class="banner-content">
@@ -381,10 +381,16 @@
     <div class="container">
       <div class="row">
         <div id="main-menu-trigger"><i class="fa fa-bars"></i></div>
-        <!-- Logo
-
-                    ============================================= -->
-          <div id="logo"> <a href="/" class="light-logo"><img src="{{$settings->header_logo}}" alt="Logo" style="width: 125px;"></a> <a href="/" class="dark-logo"><img src="{{$settings->logo}}" alt="Logo" style="width: initial;height: 40px;"></a> </div>
+        <!-- Logo 
+             ============================================= -->
+        <div id="logo"> 
+            <a href="/" class="light-logo">
+                <img src="{{$settings?->header_logo?? 'img/logo_white.svg'}}" alt="Logo" style="width: 125px;">
+            </a> 
+            <a href="/" class="dark-logo">
+                <img src="{{$settings?->logo?? 'img/logo_colored.svg'}}" alt="Logo" style="width: initial;height: 40px;">
+            </a> 
+        </div>
 
           <!-- #logo end -->
         <!-- Primary Navigation

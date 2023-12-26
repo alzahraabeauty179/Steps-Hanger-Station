@@ -12,13 +12,13 @@
           <!-- Head Title -->
           <div class="head_title">
             {{-- <i class="icon-intro"></i> --}}
-            <h1 style="color:{{$settings?->text_colour}}">{{$settings?->resName()?? 'Steps'}}</h1>
+            <h1 style="color:{{$settings?->text_colour}}">{{ $settings?->resName()?? 'Steps' }}</h1>
             <span class="welcome" style="color:{{$settings?->text_colour}}"> {{__('menu.Welcome to')}} </span>
           </div>
           <!-- End# Head Title -->
-          <p style="color:#262626;text-align: justify">{{$settings?->resDesc()?? 'No description has been added yet'}}</p>
-          {{-- <a href="about.html" class="btn btn-gold">READ MORE</a>
-        </div> --}}
+          <p style="color:#262626;text-align: justify">{{ $settings?->resDesc()?? 'No description has been added yet' }}</p>
+          {{-- <a href="about.html" class="btn btn-gold">READ MORE</a> --}}
+        </div>
         <!-- End Intro message  -->
       </div>
     </div>
@@ -43,7 +43,7 @@
           @if($settings?->cat_1)
             <div class="col-md-3 col-sm-6 col-xs-12">
               <!-- Block item -->
-              <div class="block-item"> <img src="{{assert('img/_breakfast.png')}}" alt="" style="=width: 135px;">
+              <div class="block-item"> <img src="{{'img/_breakfast.png'}}" alt="" style="=width: 135px;">
                 <h3 style="color: white">{{$settings?->catTitle1()}}</h3>
                 <p style="color: white">{{date('h:m A' , strtotime($settings?->cat_time_from_1))}} - {{date('h:m A' ,
                   strtotime($settings?->cat_time_to_1))}}</p>
@@ -54,7 +54,7 @@
           @if($settings?->cat_2)
           <div class="col-md-3 col-sm-6 col-xs-12">
             <!-- Block item -->
-            <div class="block-item"> <img src="{{assert('img/_lunch.png')}}" alt="" style="width: 135px;">
+            <div class="block-item"> <img src="{{'img/_lunch.png'}}" alt="" style="width: 135px;">
               <h3 style="color: white">{{$settings?->catTitle2()}}</h3>
               <p style="color: white">{{date('h:m A' , strtotime($settings?->cat_time_from_2))}} - {{date('h:m A' ,
                 strtotime($settings?->cat_time_to_2))}}</p>
@@ -65,7 +65,7 @@
           @if($settings?->cat_3)
           <div class="col-md-3 col-sm-6 col-xs-12">
             <!-- Block item -->
-            <div class="block-item"> <img src="{{assert('img/_dinner.png')}}" alt="" style="    width: 135px;">
+            <div class="block-item"> <img src="{{'img/_dinner.png'}}" alt="" style="    width: 135px;">
               <h3 style="color: white">{{$settings?->catTitle3()}}</h3>
               <p style="color: white">{{date('h:m A' , strtotime($settings?->cat_time_from_3))}} - {{date('h:m A' ,
                 strtotime($settings?->cat_time_to_3))}}</p>
@@ -76,7 +76,7 @@
           @if($settings?->cat_4)
           <div class="col-md-3 col-sm-6 col-xs-12">
             <!-- Block item -->
-            <div class="block-item"> <img src="{{assert('img/_dessert.png')}}" alt="" style="    width: 135px;">
+            <div class="block-item"> <img src="{{'img/_dessert.png'}}" alt="" style="    width: 135px;">
               <h3 style="color: white">{{$settings?->catTitle4()}}</h3>
               <p style="color: white">{{date('h:m A' , strtotime($settings?->cat_time_from_4))}} - {{date('h:m A' ,
                 strtotime($settings?->cat_time_to_4))}}</p>
@@ -140,10 +140,12 @@
               <div class="overlay_item"> <img src="{{$meal->meal_image}}" alt="">
                 <div class="overlay">
                   <div class="icons">
+                    <h3> 
+                      <a href="{{assert('/user/menu/meal/detail/'.$meal->id)}}" style="color: white">{{$meal->mealName()}}</a>
+                    </h3>
 
-                    <h3> <a href="{{assert('/user/menu/meal/detail/'.$meal->id)}}" style="color: white">{{$meal->mealName()}}
-                      </a></h3>
                     <h3 style="color: white">{{$meal->meal_price}} {{__('menu.SAR')}}</h3>
+
                     <!-- Rating -->
                     {{-- <fieldset class="rating">--}}
                       {{-- <span class="active"><i class="fa fa-star"></i></span> <span class="active"><i
@@ -185,7 +187,7 @@
     ============================================= -->
 <section id="slide2-03" class="reservation dark text-center">
   <!-- Bg Parallax -->
-  <div class="bcg " style="@if(count($pages) > 0) background:assert({{$pages[0]->image}})@endif;background-size:cover">
+  <div class="bcg " style="@if(count($pages) > 0) background:{{$pages[0]?->image}} @endif;background-size:cover">
     <!-- Bg Transparent -->
     <div class="bg-transparent padding-100">
       <div class="container">
@@ -323,7 +325,7 @@ px; color: white">{{__('menu.BOOK YOUR TABLE')}}</button>
       <h2>{{__('menu.Come')}} {{__('menu.&')}} <span
           style="color:{{$settings?->text_colour}}">{{__('menu.Experiences')}}</span>
         {{__('menu.our best of world class cuisine')}}</h2>
-      <a href="{{assert('/contact')}}" class="btn  btn-gold "
+      <a href="{{'/contact'}}" class="btn  btn-gold "
         style="background-color:{{$settings?->theme_colour?? 'blue'}};color:#EDEDED">{{__('menu.GET IN TOUCH')}}</a>
     </div>
   </div>
@@ -337,14 +339,14 @@ px; color: white">{{__('menu.BOOK YOUR TABLE')}}</button>
   {{-- <div class="bcg" --}} {{-- data-center="background-position: 50% 0px;" --}} {{--
     data-bottom-top="background-position: 50% 100px;" --}} {{-- data-top-bottom="background-position: 50% -100px;" --}}
     {{-- data-anchor-target="#slide-3-5" --}} {{--
-    style="background-image:assert('img/background/bg_12.jpg');background-size:cover" --}} {{-->--}}
+    style="background-image:img/background/bg_12.jpg; background-size:cover" --}} {{-->--}}
     {{-- <!-- Bg transparent -->--}}
     {{-- <div class="bg-transparent padding-50">--}}
       {{-- <div class="container">--}}
         {{-- <div class="row">--}}
           {{-- <div class="col-md-5 col-sm-0">--}}
             {{-- <!-- App Img  -->--}}
-            {{-- <img class="absolute" src="{{assert('/img/app.PNG')}}" alt="">--}}
+            {{-- <img class="absolute" src="/img/app.PNG" alt="">--}}
             {{-- <!-- End App Img  -->--}}
             {{-- </div>--}}
           {{-- <div class="col-md-7 col-sm-12">--}}

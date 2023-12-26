@@ -119,7 +119,7 @@
     </div>
     <!-- End container -->
     <!-- Footer logo !-->
-    <div class="footer_logo text-center"> <img src="{{ assert($settings?->footer_logo?? 'img/tap_logo.png') }}" alt="logo"
+    <div class="footer_logo text-center"> <img src="{{ $settings?->footer_logo?? 'img/tap_logo.png' }}" alt="logo"
             style="width:85px;background-color: {{$settings?->theme_colour?? 'blue'}}">
         <p> {{__('menu.ALL RIGHT RESERVED FOR')}} | {{$settings?->resName()}} © {{date("Y")}}</p>
     </div>
@@ -570,7 +570,7 @@
 
                          <li id="comment-2" class="comment-x byuser">
                              <div class="the-comment">
-                                 <div class="comment-author vcard"> <img src="{{ assert('img/comment.png') }}" class="avatar" alt="">
+                                 <div class="comment-author vcard"> <img src="{{ 'img/comment.png' }}" class="avatar" alt="">
                                      <span class="fn n">`+ response.reviews[i].username + `</span>
                                  </div>
                                  <div class="comment-meta"> <span> `+ response.reviews[i].date + `</span> </div>
@@ -607,7 +607,7 @@
 
                          <li id="comment-2" class="comment-x byuser">
                              <div class="the-comment">
-                                 <div class="comment-author vcard"> <img src="{{ assert('img/comment.png') }}" class="avatar" alt="">
+                                 <div class="comment-author vcard"> <img src="{{ 'img/comment.png' }}" class="avatar" alt="">
                                      <span class="fn n">
 
 `+ response.reviews[i].username + `
@@ -967,7 +967,7 @@
                         $('.checkout_submit').css('width', '')
                     }
 
-                    $("#menu_items_ul_li").find('li').css('float', "right")
+                    // $("#menu_items_ul_li").find('li').css('float', "right")
 
                     $('#content').css("direction", "rtl");
                     $('.content').css("direction", "rtl");
