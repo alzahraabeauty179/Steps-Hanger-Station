@@ -23,15 +23,15 @@
     <title>{{__('menu.'.$uri[0])}}</title>
     <!-- Favicon Icons
         ============================================= -->
-    <link rel="shortcut icon" href="{{$settings?->icon?? 'img/logo_colored.svg'}}">
+    <link rel="shortcut icon" href="{{url($settings?->icon?? 'img/logo_colored.svg')}}">
     <!-- Standard iPhone Touch Icon-->
-    <link rel="apple-touch-icon" sizes="57x57" href="{{$settings?->header_logo?? 'img/logo_colored.svg'}}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{url($settings?->header_logo?? 'img/logo_colored.svg')}}">
     <!-- Retina iPhone Touch Icon-->
-    <link rel="apple-touch-icon" sizes="114x114" href="{{$settings?->header_logo?? 'img/logo_colored.svg'}}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{url($settings?->header_logo?? 'img/logo_colored.svg')}}">
     <!-- Standard iPad Touch Icon-->
-    <link rel="apple-touch-icon" sizes="72x72" href="{{$settings?->header_logo?? 'img/logo_colored.svg'}}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{url($settings?->header_logo?? 'img/logo_colored.svg')}}">
     <!-- Retina iPad Touch Icon-->
-    <link rel="apple-touch-icon" sizes="144x144" href="{{$settings?->header_logo?? 'img/logo_colored.svg'}}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{url($settings?->header_logo?? 'img/logo_colored.svg')}}">
     <!-- Bootstrap Links
         ============================================= -->
     <!-- Bootstrap CSS  -->
@@ -174,20 +174,20 @@
 
         }
         ::selection {
-            background: {{$settings?->theme_colour}};
+            background: {{$settings?->theme_colour?? '#301b72'}};
             color: #fff
         }
         ::-moz-selection {
-            background: {{$settings?->theme_colour}};
+            background: {{$settings?->theme_colour?? '#301b72'}};
             color:#fff
         }
         ::-webkit-selection {
-            background: {{$settings?->theme_colour}};
+            background: {{$settings?->theme_colour?? '#301b72'}};
             color:#fff
         }
 
         #header-sticky-wrapper.is-sticky #header #main-menu>ul>li.current>a, #header-sticky-wrapper.is-sticky #header #main-menu>ul>li>a:hover, #header-sticky-wrapper.is-sticky #header #shop_cart>a>i:hover {
-            color: {{$settings?->theme_colour}}
+            color: {{$settings?->theme_colour?? '#301b72'}};
         }
 
         @font-face {
@@ -196,7 +196,7 @@
         }
 
         .date-block-dark .date-blocks .block-item{
-            border: 2px solid {{$settings?->theme_colour}};
+            border: 2px solid {{$settings?->theme_colour?? '#301b72'}};
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         }
 
@@ -286,9 +286,8 @@
         }
 
         #shop_cart>a>i{
-            color: {{$settings?->theme_colour}};
+            color: {{$settings?->theme_colour?? '#301b72'}};
         }
-
 
         .custom_widtho{
             width: 455px;
@@ -305,7 +304,7 @@
 <!-- Loader
     ============================================= -->
 <div id="loader2">
-    <div class="loader-item"> <img src="{{$settings?->logo?? 'img/logo_colored.svg'}}" alt="" style="width:225px">
+    <div class="loader-item"> <img src="{{url($settings?->logo?? 'img/logo_colored.svg')}}" alt="" style="width:225px">
         <div class="sk-spinner sk-spinner-wave">
             <div class="sk-rect1" style="background-color:{{$settings?->theme_colour?? '#301b72'}}"></div>
             <div class="sk-rect2" style="background-color:{{$settings?->theme_colour?? '#301b72'}}"></div>
@@ -366,10 +365,10 @@
             ============================================= -->
         <div id="logo"> 
             <a href="/" class="light-logo">
-                <img src="{{$settings?->header_logo?? 'img/logo_white.svg'}}" alt="Logo" style="width: 125px;">
+                <img src="{{url($settings?->header_logo?? 'img/logo_white.svg')}}" alt="Logo" style="width: 125px;">
             </a> 
             <a href="/" class="dark-logo">
-                <img src="{{$settings?->logo?? 'img/logo_colored.svg'}}" alt="Logo" style="width: initial;height: 40px;">
+                <img src="{{url($settings?->logo?? 'img/logo_colored.svg')}}" alt="Logo" style="width: initial;height: 40px;">
             </a> 
         </div>
 

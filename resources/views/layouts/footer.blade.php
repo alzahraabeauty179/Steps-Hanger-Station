@@ -32,16 +32,16 @@
                     
                     <ul class="social mt30">
                         <li><a href="{{$settings?->facebook}}" target="_blank" data-toggle="tooltip" title="Facebook"
-                                style="background-color: {{$settings?->text_colour?? '#6653ff'}}"><i class="fab fa-facebook"></i></a>
+                                style="background-color: {{$settings?->text_colour?? '#4b36b9'}}"><i class="fab fa-facebook"></i></a>
                         </li>
                         <li><a href="{{$settings?->twitter}}" target="_blank" data-toggle="tooltip" title="Twitter"
-                                style="background-color: {{$settings?->text_colour?? '#6653ff'}}"><i class="fab fa-twitter"></i></a>
+                                style="background-color: {{$settings?->text_colour?? '#4b36b9'}}"><i class="fab fa-twitter"></i></a>
                         </li>
                         <li><a href="{{$settings?->instagram}}" target="_blank" data-toggle="tooltip" title="Instgram"
-                                style="background-color: {{$settings?->text_colour?? '#6653ff'}}"><i class="fab fa-instagram"></i></a>
+                                style="background-color: {{$settings?->text_colour?? '#4b36b9'}}"><i class="fab fa-instagram"></i></a>
                         </li>
                         <li><a href="{{$settings?->youtube}}" target="_blank" data-toggle="tooltip" title="Youtube"
-                                style="background-color: {{$settings?->text_colour?? '#6653ff'}}"><i class="fab fa-youtube"></i></a>
+                                style="background-color: {{$settings?->text_colour?? '#4b36b9'}}"><i class="fab fa-youtube"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -523,7 +523,7 @@
                 $("#comments-list").empty();
                 for (let i = 0; i < response.reviews.length; i++) {
                     if (response.reviews[i].user_id == user_id)
-                        removeBtn = `<button class="btn btn-black" onclick="removeReview(` + meal_id + ` , ` + user_id + `)" style="float: right;background: #6653ff">remove review</button>`
+                        removeBtn = `<button class="btn btn-black" onclick="removeReview(` + meal_id + ` , ` + user_id + `)" style="float: right;background: #4b36b9">remove review</button>`
                     else
                         removeBtn = null
 

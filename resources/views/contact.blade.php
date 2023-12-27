@@ -8,13 +8,11 @@
   {
     color:#262626
   }
+</style>
 
-
-
-  </style>
 <div id="content">
     <!-- Our Contact
-    ============================================= -->
+      ============================================= -->
     <section class="contact text-center padding-100">
       <div class="container">
         <div class="row">
@@ -78,7 +76,7 @@
                     <br>
               <!-- Element -->
               <div class="element">
-                <input type="button"   onclick="contactNow()" value="{{__('menu.SEND2')}}"  class="btn container" style="background-color: {{$settings->theme_colour}};color:white;width:50%;
+                <input type="button"   onclick="contactNow()" value="{{__('menu.SEND')}}"  class="btn container" style="background-color: {{$settings?->theme_colour?? '#301b72'}};color:white;width:50%;
                     padding: 10px;"></input>
 
               </div>
@@ -112,12 +110,12 @@
                 <!-- Adress -->
                 <div class="col-md-4 adress">
                   <!-- Icon -->
-                  <div class="col-md-3 icon " > <i class="fa fa-road" style="background-color: {{$settings->theme_colour}};border: 2px solid {{$settings->theme_colour}};"></i> </div>
+                  <div class="col-md-3 icon " > <i class="fa fa-road" style="background-color: {{$settings?->theme_colour?? '#301b72'}};border: 2px solid {{$settings?->theme_colour?? '#301b72'}};"></i> </div>
                   <!-- End Icon -->
                   <!-- Content Item -->
                   <div class="col-md-9 content-item">
                     <h3>{{__('menu.Address')}}</h3>
-                    <p> {{__('menu.HeadQuarter')}} : {{$settings->location()}}.</p>
+                    <p> {{__('menu.HeadQuarter')}} : {{$settings?->location()}}.</p>
                   </div>
                   <!-- End content Item -->
                 </div>
@@ -125,12 +123,12 @@
                 <!-- Phone -->
                 <div class="col-md-4 Phone">
                   <!-- Icon -->
-                  <div class="col-md-3 icon"> <i class="fa fa-phone" style="background-color: {{$settings->theme_colour}};border: 2px solid {{$settings->theme_colour}};"></i> </div>
+                  <div class="col-md-3 icon"> <i class="fa fa-phone" style="background-color: {{$settings?->theme_colour?? '#301b72'}};border: 2px solid {{$settings?->theme_colour?? '#301b72'}};"></i> </div>
                   <!-- End Icon -->
                   <!-- Content Item -->
                   <div class="col-md-9 content-item">
                     <h3>{{__('menu.PHONE')}}</h3>
-                    <p>{{__('menu.Telephone')}} : (+966) {{$settings->phone}}</p>
+                    <p>{{__('menu.Telephone')}} : (+966) {{$settings?->phone}}</p>
 
                   </div>
                   <!-- End content Item -->
@@ -139,12 +137,12 @@
                 <!-- Email -->
                 <div class="col-md-4 email">
                   <!-- Icon -->
-                  <div class="col-md-3 icon"> <i class="fa fa-envelope" style="background-color: {{$settings->theme_colour}};border: 2px solid {{$settings->theme_colour}};"></i> </div>
+                  <div class="col-md-3 icon"> <i class="fa fa-envelope" style="background-color: {{$settings?->theme_colour?? '#301b72'}};border: 2px solid {{$settings?->theme_colour?? '#301b72'}};"></i> </div>
                   <!-- End Icon -->
                   <!-- Content Item -->
                   <div class="col-md-9 content-item">
                     <h3>{{__('menu.E-MAIL')}}</h3>
-                    <p>{{__('menu.Support')}} : <a href="#">{{$settings->email}}</a></p>
+                    <p>{{__('menu.Support')}} : <a href="#">{{$settings?->email}}</a></p>
 
                   </div>
                   <!-- End content Item -->

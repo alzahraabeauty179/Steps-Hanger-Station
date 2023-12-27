@@ -22,15 +22,15 @@
   <title>{{__('menu.Steps Home')}}</title>
   <!-- Favicon Icons
      ============================================= -->
-  <link rel="shortcut icon" href="{{$settings?->icon?? 'img/logo_colored.svg'}}">
+  <link rel="shortcut icon" href="{{url($settings?->icon?? 'img/logo_colored.svg')}}">
   <!-- Standard iPhone Touch Icon-->
-  <link rel="apple-touch-icon" sizes="57x57" href="{{$settings?->header_logo?? 'img/logo_colored.svg'}}">
+  <link rel="apple-touch-icon" sizes="57x57" href="{{url($settings?->header_logo?? 'img/logo_colored.svg')}}">
   <!-- Retina iPhone Touch Icon-->
-  <link rel="apple-touch-icon" sizes="114x114" href="{{$settings?->header_logo?? 'img/logo_colored.svg'}}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{url($settings?->header_logo?? 'img/logo_colored.svg')}}">
   <!-- Standard iPad Touch Icon-->
-  <link rel="apple-touch-icon" sizes="72x72" href="{{$settings?->header_logo?? 'img/logo_colored.svg'}}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{url($settings?->header_logo?? 'img/logo_colored.svg')}}">
   <!-- Retina iPad Touch Icon-->
-  <link rel="apple-touch-icon" sizes="144x144" href="{{$settings?->header_logo?? 'img/logo_colored.svg'}}">
+  <link rel="apple-touch-icon" sizes="144x144" href="{{url($settings?->header_logo?? 'img/logo_colored.svg')}}">
   <link rel="stylesheet" href="{{url('/admin/vendors/iconic-fonts/flat-icons/flaticon.css')}}">
   <!-- Bootstrap Links
      ============================================= -->
@@ -161,7 +161,7 @@
   <!-- Loader
     ============================================= -->
   <div id="loader2">
-    <div class="loader-item"> <img src="{{$settings?->logo?? 'img/logo_colored.svg'}}" alt="" style="width:225px">
+    <div class="loader-item"> <img src="{{url($settings?->logo?? 'img/logo_colored.svg')}}" alt="" style="width:225px">
       <div class="sk-spinner sk-spinner-wave">
         <div class="sk-rect1" style="background-color:{{$settings?->theme_colour?? '#301b72'}}"></div>
         <div class="sk-rect2" style="background-color:{{$settings?->theme_colour?? '#301b72'}}"></div>
@@ -214,7 +214,7 @@
                 </h4>
               </div>
               <div class="video-wrap">
-                <video poster="img/themes/pizza/1.jpg" preload="auto" loop autoplay>
+                <video poster="{{url('img/themes/pizza/1.jpg')}}" preload="auto" loop autoplay>
 
                 </video>
                 <div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
@@ -277,14 +277,14 @@
           <div id="logo"> 
             <a href="/" class="light-logo">
               <img 
-                src="{{$settings?->header_logo?? 'img/logo_white.svg'}}"
+                src="{{url($settings?->header_logo?? 'img/logo_white.svg')}}"
                 alt="Logo"
                 style="width: 125px;margin-top: 35px;"
               >
             </a> 
             <a href="/" class="dark-logo">
               <img
-                src="{{$settings?->header_logo?? 'img/logo_colored.svg'}}" 
+                src="{{url($settings?->header_logo?? 'img/logo_colored.svg')}}" 
                 alt="Logo" 
                 style="width: initial;height: 40px;"
               >

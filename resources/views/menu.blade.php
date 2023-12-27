@@ -1,6 +1,6 @@
- @extends('layouts.child')
- @section('content')
-     @php($settings = \App\Models\Setting::first())
+@extends('layouts.child')
+@section('content')
+@php $settings = \App\Models\Setting::first(); @endphp
 
  <!-- Content
     ============================================= -->
@@ -9,7 +9,7 @@
     ============================================= -->
     <div class="menu_grid our-menu text-center padding-b-70">
       <!-- Menu Bar -->
-      <div class="menu-bar " style="background-color:{{$settings->theme_colour}};color:#EDEDED">
+      <div class="menu-bar " style="background-color:{{$settings?->theme_colour?? '#301b72'}};color:#EDEDED">
         <!-- menu Filter
                     ============================================= -->
         <ul id="menu-fillter" class="clearfix" style="direction: initial" >
@@ -35,7 +35,7 @@
             <div class="overlay_content overlay-menu" >
 
               <!-- Overlay Item -->
-              <div class="overlay_item"> <span class="label" style="color: white;background-color: {{$settings->theme_colour}}" >{{__('menu.best seller')}}</span> <img src="{{$meal->meal_image}}"  alt="">
+              <div class="overlay_item"> <span class="label" style="color: white;background-color: {{$settings?->theme_colour?? '#301b72'}}" >{{__('menu.best seller')}}</span> <img src="{{$meal->meal_image}}"  alt="">
                 <!-- Overlay -->
                 <div class="overlay" >
                   <!-- Icons -->
@@ -48,7 +48,7 @@
                     </fieldset>
                     <!-- End Rating -->
                     <!-- Buttons -->
-                      <div class="button"> <a class="btn btn-gold" onclick="fireToasting('{{$meal}}')" data-toggle="tooltip" title="" data-original-title="Add to Cart" style="background-color: {{$settings->theme_colour}}"><i class="fa fa-shopping-cart" style="color:#ffffff;"></i></a> <a class="btn btn-gold" href="{{url('/user/menu/meal/detail/'.$meal->id)}}"  data-toggle="tooltip" title="" data-original-title="MEAL DETAILS" style="background-color: {{$settings->theme_colour}} ;"><i class="fa fa-info-circle" style="color: #ffffff"></i>   <span class="tooltiptext" id="myTooltip"></span></a> </div>
+                      <div class="button"> <a class="btn btn-gold" onclick="fireToasting('{{$meal}}')" data-toggle="tooltip" title="" data-original-title="Add to Cart" style="background-color: {{$settings?->theme_colour?? '#301b72'}}"><i class="fa fa-shopping-cart" style="color:#ffffff;"></i></a> <a class="btn btn-gold" href="{{url('/user/menu/meal/detail/'.$meal->id)}}"  data-toggle="tooltip" title="" data-original-title="MEAL DETAILS" style="background-color: {{$settings?->theme_colour?? '#301b72'}} ;"><i class="fa fa-info-circle" style="color: #ffffff"></i>   <span class="tooltiptext" id="myTooltip"></span></a> </div>
                     <!-- End Buttons -->
                     <a class="close-overlay hidden">x</a> </div>
                   <!-- End Icons -->
