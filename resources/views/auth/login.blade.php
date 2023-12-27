@@ -160,7 +160,7 @@
             </a> 
             <a href="/" class="dark-logo">
               <img
-                src="{{url($settings?->header_logo?? 'img/logo_colored.svg'})}" 
+                src="{{url($settings?->header_logo?? 'img/logo_colored.svg')}}" 
                 alt="Logo" 
                 style="width: initial;height: 40px;"
               >
