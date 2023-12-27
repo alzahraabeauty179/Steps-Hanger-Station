@@ -157,6 +157,7 @@
     </iframe>
   </noscript>
   <!-- End Google Tag Manager (noscript) -->
+
   <!-- Loader
     ============================================= -->
   <div id="loader2">
@@ -183,76 +184,88 @@
         data-property="{videoURL:'HAeWL6I25rc',containment:'.fullheight', showControls:true, autoPlay:true, loop:true, vol:50, mute:false, startAt:0,  stopAt:296, opacity:1, addRaster:true, quality:'large', optimizeDisplay:true}">
       <!-- Bg transparent --> 
     --}}
-    @if (count($sliders))
-      <section id="" class="fullheight">
-        <div class="swiper-container swiper-parent fullheight">
-          <!-- Slider Wrapper  -->
-          <div class="swiper-wrapper">
-            <!-- Slide  -->
-            @foreach($sliders as $slider)
-              <div class="swiper-slide">
-                <div class="slider-content">
-                  <h1 data-caption-animate="fadeInUp" style="color:#EDEDED">{{$slider->title()}}</h1>
-                  <h4 class="text-capitalize " data-caption-animate="fadeInUp" data-caption-delay="300"
-                    style="color:#EDEDED">
-                    {{$slider->desc()}}.
-                  </h4>
-                </div>
-                <div class="video-wrap">
-                  <video poster="{{assert($slider->image)}}" preload="auto" loop autoplay>
-                  </video>
-                  <div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
-                </div>
-              </div>
-            @endforeach
-            <!-- End Slide  -->
-            <!-- Slide  -->
-            {{-- 
-              <div 
-                class="swiper-slide"
-                style="background-image:'/img/categories.jpg'; background-position: center top;background-size:cover"
-              >
-                <div class="slider-content ">
-                  <h1 data-caption-animate="fadeInUp" class="white">HIGH CLASS PROFESSIONAL SERVICE</h1>
-                  <h4 class="text-capitalize white" data-caption-animate="fadeInUp" data-caption-delay="300">Hot
-                    Restaurant Themes
-                  </h4>
-                </div>
-              </div> 
-            --}}
-            <!-- End Slide  -->
-          </div>
-          <!-- End Slider Wrapper  -->
-          <div id="slider-arrow-left"><i class="fa fa-angle-left"></i></div>
-          <div id="slider-arrow-right"><i class="fa fa-angle-right"></i></div>
-          <div id="slide-number">
-            <div id="slide-number-current"></div>
-            <span>/</span>
-            <div id="slide-number-total"></div>
-          </div>
-        </div>
-        {{-- <div class="bg-transparent "> --}}
-          <!-- Slider content -->
-          {{-- <div class="container dark slider-content"> <i class="icon-top-draw"></i>--}}
-            {{-- <div id="text-transform" class="owl-carousel">--}}
-              {{-- <div class="item">--}}
-                {{-- <h1>Premium Restaurant Theme</h1>--}}
-                {{-- </div>--}}
-              {{-- <div class="item">--}}
-                {{-- <h1>KEEP CALM &amp; TASTE OUR FOOD</h1>--}}
-                {{-- </div>--}}
-              {{-- <div class="item">--}}
-                {{-- <h1>Premium Restaurant Themes</h1>--}}
-                {{-- </div>--}}
-              {{-- </div>--}}
-            {{-- <p class="text-capitalize">We Create Delicous Memories</p>--}}
-            {{-- <i class="icon-bottom-draw"></i> </div>--}}
-          <!-- End Slider content -->
 
-          <!-- End Bg transparent -->
-      </section>
-    @endif
+    <section id="" class="fullheight" >
+      <div class="swiper-container swiper-parent fullheight">
+        <!-- Slider Wrapper  -->
+        <div class="swiper-wrapper">
+          <!-- Slide  -->
+          @forelse($sliders as $slider)
+            <div class="swiper-slide">
+              <div class="slider-content">
+                <h1 data-caption-animate="fadeInUp" style="color:#EDEDED">{{$slider->title()}}</h1>
+                <h4 class="text-capitalize " data-caption-animate="fadeInUp" data-caption-delay="300" style="color:#EDEDED">
+                  {{$slider->desc()}}.
+                </h4>
+              </div>
+              <div class="video-wrap">
+                <video poster="{{url($slider->image)}}" preload="auto" loop autoplay>
+
+                </video>
+                <div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
+              </div>
+            </div>
+          @empty
+            <div class="swiper-slide">
+              <div class="slider-content">
+                <h1 data-caption-animate="fadeInUp" style="color:#EDEDED">Steps</h1>
+                <h4 class="text-capitalize " data-caption-animate="fadeInUp" data-caption-delay="300" style="color:#EDEDED">
+                  No description has been added yet.
+                </h4>
+              </div>
+              <div class="video-wrap">
+                <video poster="img/themes/pizza/1.jpg" preload="auto" loop autoplay>
+
+                </video>
+                <div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
+              </div>
+            </div>
+          @endforelse
+          <!-- End Slide  -->
+
+          <!-- Slide - AS Refrance -->
+          {{-- <div class="swiper-slide" style="background-image: url('/img/categories.jpg'); background-position: center top;background-size:cover">
+            <div class="slider-content ">
+
+              <h1  data-caption-animate="fadeInUp" class="white">HIGH CLASS PROFESSIONAL SERVICE</h1>
+              <h4 class="text-capitalize white" data-caption-animate="fadeInUp" data-caption-delay="300">Hot Restaurant Themes</h4>
+            </div>
+          </div> --}}
+          <!-- End Slide  -->
+        </div>
+        <!-- End Slider Wrapper  -->
+
+        <div id="slider-arrow-left"><i class="fa fa-angle-left"></i></div>
+        <div id="slider-arrow-right"><i class="fa fa-angle-right"></i></div>
+        <div id="slide-number">
+          <div id="slide-number-current"></div>
+          <span>/</span>
+          <div id="slide-number-total"></div>
+        </div>
+      </div>
+
+      {{-- <div class="bg-transparent "> --}}
+          <!-- Slider content -->
+      {{--      <div class="container dark slider-content"> <i class="icon-top-draw"></i>--}}
+      {{--        <div id="text-transform" class="owl-carousel">--}}
+      {{--          <div class="item">--}}
+      {{--            <h1>Premium Restaurant Theme</h1>--}}
+      {{--          </div>--}}
+      {{--          <div class="item">--}}
+      {{--            <h1>KEEP CALM &amp; TASTE OUR FOOD</h1>--}}
+      {{--          </div>--}}
+      {{--          <div class="item">--}}
+      {{--            <h1>Premium Restaurant Themes</h1>--}}
+      {{--          </div>--}}
+      {{--        </div>--}}
+      {{--        <p class="text-capitalize">We Create Delicous Memories</p>--}}
+      {{--        <i class="icon-bottom-draw"></i> --}}
+            <!-- End Slider content -->
+      {{-- </div>--}}
+      <!-- End Bg transparent -->
+    </section>
     <!-- End Video background Youtube -->
+
     <!-- Header Center
         ============================================= -->
     <header id="header" class="center-header">

@@ -120,11 +120,11 @@
         <!-- Footer logo !-->
         <div class="footer_logo text-center"> 
             <img 
-                src="{{ $settings?->footer_logo?? 'img/logo_white.svg' }}" 
+                src="{{ $settings?->footer_logo?? 'img/logo_white.svg'}}" 
                 alt="logo"
                 style="width:85px;background-color: {{$settings?->theme_colour?? '#301b72'}}"
             >
-            <p> {{__('menu.ALL RIGHT RESERVED FOR')}} | {{$settings?->resName()?? 'Staps'}} © {{date("Y")}}</p>
+            <p> {{__('menu.ALL RIGHT RESERVED FOR')}} | {{$settings?->resName()?? 'Steps'}} © {{date("Y")}}</p>
         </div>
         <!-- End Footer logo !-->
     </footer>
