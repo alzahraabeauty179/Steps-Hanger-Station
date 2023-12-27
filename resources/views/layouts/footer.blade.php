@@ -2,139 +2,139 @@
     $settings = \App\Models\Setting::first();
     $branches = \App\Models\Branch::latest()->get();
 @endphp
-<style>
-    .media-heading a {
-        color: whitesmoke
-    }
+    <style>
+        .media-heading a {
+            color: whitesmoke
+        }
 
-    .myclass {
-        text-transform: lowercase;
-    }
-</style>
+        .myclass {
+            text-transform: lowercase;
+        }
+    </style>
 
-<!-- Footer
-    ============================================= -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-    crossorigin="anonymous"
->
+    <!-- Footer
+        ============================================= -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous"
+    >
 
-<footer id="footer" class="padding-50 " style="background-color:{{$settings?->theme_colour?? '#301b72'}};color: white;">
-    <div class="container">
-        <div class="row">
-            <!-- Our location !-->
-            <div class="col-md-3 col-sm-6 col-xs-12 our_location">
-                <h3>{{__('menu.HeadQuarter Location')}}</h3>
-                <p>{{$settings?->resName()?? 'Steps'}} {{__('menu.Head Office')}}:</p>
-                <span>{{$settings?->location()}}</span>
-                <p class="mt30">{{__('menu.Call for Reservations')}}:<span>{{$settings?->phone}}</span></p>
-                <p>{{__('menu.E-mail')}}: <span>{{$settings?->email}}</span> </p>
-                
-                <ul class="social mt30">
-                    <li><a href="{{$settings?->facebook}}" target="_blank" data-toggle="tooltip" title="Facebook"
-                            style="background-color: {{$settings?->text_colour?? '#6653ff'}}"><i class="fab fa-facebook"></i></a>
-                    </li>
-                    <li><a href="{{$settings?->twitter}}" target="_blank" data-toggle="tooltip" title="Twitter"
-                            style="background-color: {{$settings?->text_colour?? '#6653ff'}}"><i class="fab fa-twitter"></i></a>
-                    </li>
-                    <li><a href="{{$settings?->instagram}}" target="_blank" data-toggle="tooltip" title="Instgram"
-                            style="background-color: {{$settings?->text_colour?? '#6653ff'}}"><i class="fab fa-instagram"></i></a>
-                    </li>
-                    <li><a href="{{$settings?->youtube}}" target="_blank" data-toggle="tooltip" title="Youtube"
-                            style="background-color: {{$settings?->text_colour?? '#6653ff'}}"><i class="fab fa-youtube"></i></a>
-                    </li>
-                </ul>
-            </div>
-            <!-- End our location -->
-
-            <!-- Branches !-->
-            <div class="col-md-3 col-sm-6 col-xs-12 latest_post">
-                <h3>{{__('menu.Branches')}}</h3>
-                @foreach($branches?? [] as $branch)
-                <div class="media">
-                    {{-- <div class="media-left"> <a href="blog_single_image.html"> <img class="media-object"
-                                rel="prettyPhoto" src="img/post_thumb.jpg" alt="post thumb"> </a> </div> --}}
-                    <div class="media-body" style="color:#ededed">
-                        <h4 class="media-heading"><a href="#">{{$branch->branchName()}}</a></h4>
-                        {{-- {{$branch->branchDesc()}}--}}
-                    </div>
-                </div>
-                <!-- End media -->
-                @endforeach
-                <!-- End media -->
-            </div>
-            <!-- End Branches -->
-
-            <!-- Opening time !-->
-            <div class="col-md-3 col-sm-6 col-xs-12 ">
-                <h3>{{__('menu.Working Times')}}</h3>
-                <ul>
-                    <li>
-                        <p>
-                            {{__('menu.from')}}
-                            <time datetime="00:01" style="float: initial"> 
-                                {{date('h:i A', strtotime($settings?->cat_time_from_1))}} 
-                            </time>
-                        </p>
-                    </li>
-
-                    <li>
-                        <p>
-                            {{__('menu.to')}}
-                            <time datetime="00:01" style="float: initial"> 
-                                {{date('h:i A', strtotime($settings?->cat_time_to_4))}}
-                            </time>
-                        </p>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 opening_time">
-                <h3>{{__('menu.Working Days')}}</h3>
-                <ul>
-                    @foreach(json_decode($settings?->opening_days)?? [] as $day)
-                    <li>
-                        <p>{{__('menu.'.$day)}}
-
-                            {{-- <time datetime="00:01" style="float: initial;margin-right: 20px">1:00 AM - 1:00
-                                PM</time>--}}
-                        </p>
-                    </li>
-                    @endforeach
-                </ul>
-            </div>
-            <!-- End opening time -->
-
-            {{-- 
-                <!-- Flickr !-->
-                <div class="col-md-3 col-sm-6 col-xs-12 flickr">
-                    <h3>Flickr Photos</h3>
-                    <ul id="flickrbox" class="thumbs">
+    <footer id="footer" class="padding-50 " style="background-color:{{$settings?->theme_colour?? '#301b72'}};color: white;">
+        <div class="container">
+            <div class="row">
+                <!-- Our location !-->
+                <div class="col-md-3 col-sm-6 col-xs-12 our_location">
+                    <h3>{{__('menu.HeadQuarter Location')}}</h3>
+                    <p>{{$settings?->resName()?? 'Steps'}} {{__('menu.Head Office')}}:</p>
+                    <span>{{$settings?->location()}}</span>
+                    <p class="mt30">{{__('menu.Call for Reservations')}}:<span>{{$settings?->phone}}</span></p>
+                    <p>{{__('menu.E-mail')}}: <span>{{$settings?->email}}</span> </p>
+                    
+                    <ul class="social mt30">
+                        <li><a href="{{$settings?->facebook}}" target="_blank" data-toggle="tooltip" title="Facebook"
+                                style="background-color: {{$settings?->text_colour?? '#6653ff'}}"><i class="fab fa-facebook"></i></a>
+                        </li>
+                        <li><a href="{{$settings?->twitter}}" target="_blank" data-toggle="tooltip" title="Twitter"
+                                style="background-color: {{$settings?->text_colour?? '#6653ff'}}"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li><a href="{{$settings?->instagram}}" target="_blank" data-toggle="tooltip" title="Instgram"
+                                style="background-color: {{$settings?->text_colour?? '#6653ff'}}"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li><a href="{{$settings?->youtube}}" target="_blank" data-toggle="tooltip" title="Youtube"
+                                style="background-color: {{$settings?->text_colour?? '#6653ff'}}"><i class="fab fa-youtube"></i></a>
+                        </li>
                     </ul>
                 </div>
-                <!-- End flickr --> 
-            --}}
+                <!-- End our location -->
+
+                <!-- Branches !-->
+                <div class="col-md-3 col-sm-6 col-xs-12 latest_post">
+                    <h3>{{__('menu.Branches')}}</h3>
+                    @foreach($branches?? [] as $branch)
+                    <div class="media">
+                        {{-- <div class="media-left"> <a href="blog_single_image.html"> <img class="media-object"
+                                    rel="prettyPhoto" src="img/post_thumb.jpg" alt="post thumb"> </a> </div> --}}
+                        <div class="media-body" style="color:#ededed">
+                            <h4 class="media-heading"><a href="#">{{$branch->branchName()}}</a></h4>
+                            {{-- {{$branch->branchDesc()}}--}}
+                        </div>
+                    </div>
+                    <!-- End media -->
+                    @endforeach
+                    <!-- End media -->
+                </div>
+                <!-- End Branches -->
+
+                <!-- Opening time !-->
+                <div class="col-md-3 col-sm-6 col-xs-12 ">
+                    <h3>{{__('menu.Working Times')}}</h3>
+                    <ul>
+                        <li>
+                            <p>
+                                {{__('menu.from')}}
+                                <time datetime="00:01" style="float: initial"> 
+                                    {{date('h:i A', strtotime($settings?->cat_time_from_1))}} 
+                                </time>
+                            </p>
+                        </li>
+
+                        <li>
+                            <p>
+                                {{__('menu.to')}}
+                                <time datetime="00:01" style="float: initial"> 
+                                    {{date('h:i A', strtotime($settings?->cat_time_to_4))}}
+                                </time>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12 opening_time">
+                    <h3>{{__('menu.Working Days')}}</h3>
+                    <ul>
+                        @foreach(json_decode($settings?->opening_days)?? [] as $day)
+                        <li>
+                            <p>{{__('menu.'.$day)}}
+
+                                {{-- <time datetime="00:01" style="float: initial;margin-right: 20px">1:00 AM - 1:00
+                                    PM</time>--}}
+                            </p>
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
+                <!-- End opening time -->
+
+                {{-- 
+                    <!-- Flickr !-->
+                    <div class="col-md-3 col-sm-6 col-xs-12 flickr">
+                        <h3>Flickr Photos</h3>
+                        <ul id="flickrbox" class="thumbs">
+                        </ul>
+                    </div>
+                    <!-- End flickr --> 
+                --}}
+            </div>
         </div>
-    </div>
-    <!-- End container -->
+        <!-- End container -->
 
-    <!-- Footer logo !-->
-    <div class="footer_logo text-center"> 
-        <img 
-            src="{{ $settings?->footer_logo?? 'img/logo_white.svg' }}" 
-            alt="logo"
-            style="width:85px;background-color: {{$settings?->theme_colour?? '#301b72'}}"
-        >
-        <p> {{__('menu.ALL RIGHT RESERVED FOR')}} | {{$settings?->resName()?? 'Staps'}} © {{date("Y")}}</p>
-    </div>
-    <!-- End Footer logo !-->
-</footer>
-<!-- End footer -->
+        <!-- Footer logo !-->
+        <div class="footer_logo text-center"> 
+            <img 
+                src="{{ $settings?->footer_logo?? 'img/logo_white.svg' }}" 
+                alt="logo"
+                style="width:85px;background-color: {{$settings?->theme_colour?? '#301b72'}}"
+            >
+            <p> {{__('menu.ALL RIGHT RESERVED FOR')}} | {{$settings?->resName()?? 'Staps'}} © {{date("Y")}}</p>
+        </div>
+        <!-- End Footer logo !-->
+    </footer>
+    <!-- End footer -->
 
-<!--  scroll to top of the page-->
-<a href="#" id="scroll_up" style="background: {{$settings?->theme_colour?? '#301b72'}}">
-    <i class="fa fa-angle-up"></i>
-</a> 
-<!-- </div> -->
+    <!--  scroll to top of the page-->
+    <a href="#" id="scroll_up" style="background: {{$settings?->theme_colour?? '#301b72'}}">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
 <!-- End wrapper -->
 
 <!-- Core JS Libraries -->

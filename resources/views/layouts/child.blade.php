@@ -65,7 +65,7 @@
         <script src="{{url('/javascripts/libs/respond.min.js')}}"></script>
         <![endif]
     -->
-    <script src="{{ asset('/js/app.js') }}" defer></script>
+    <script src="{{ url('/js/app.js') }}" defer></script>
     <style>
         .overlay_item img{
             width: initial;
@@ -192,7 +192,7 @@
 
         @font-face {
             font-family: saleem;
-            src: url('{{asset('/fonts/Bahij_TheSansArabic-Bold.ttf')}}');
+            src: url('{{url('/fonts/Bahij_TheSansArabic-Bold.ttf')}}');
         }
 
         .date-block-dark .date-blocks .block-item{

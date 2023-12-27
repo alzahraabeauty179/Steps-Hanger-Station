@@ -71,10 +71,10 @@
   </li>
 
   <!-- Mega Menu
-           ============================================= -->
+      ============================================= -->
 
   <!-- Mega Menu
-           ============================================= -->
+      ============================================= -->
 
   <li>
     @guest()
@@ -88,43 +88,62 @@
     @endguest
   </li>
 
-  <li><a href="#" onclick="changeLocal()">
+  <li>
+    <a href="#" onclick="changeLocal()">
       <div id="locale">{{__('menu.language')}}</div>
     </a>
-
   </li>
 </ul>
 
 <!-- Top Cart
-                      ============================================= -->
-<div id="shop_cart"> <a href="#" id="shop_tigger"><i class="fa fa-shopping-cart"></i><span class="cart_count"
-      style="background-color: {{$settings?->theme_colour?? '#301b72'}}">{{count($cartItems)}}</span></a>
+    ============================================= -->
+<div id="shop_cart"> 
+  <a href="#" id="shop_tigger">
+    <i class="fa fa-shopping-cart"></i>
+    <span 
+      class="cart_count"
+      style="background-color: {{$settings?->theme_colour?? '#301b72'}}"
+    >
+      {{count($cartItems)}}
+    </span>
+  </a>
+
   <div class="shop_cart_content">
     <h4>{{__('menu.Your Cart')}}</h4>
 
-
     <div class="cart_items">
       @foreach($cartItems as $cartItem)
-      <div class="item clearfix cart_item_{{$cartItem->id}}"> <a href="#"><img src="{{$cartItem->meal_image}}"
-            alt=""></a>
-        <div class="item_desc"> <a href="#">{{Str::limit($cartItem->meal_name,14)}}</a> <span
-            class="item_price">{{$cartItem->price}} {{__('menu.SAR')}}</span> <span class="item_quantity">x
-            {{$cartItem->quantity}}</span> </div>
-      </div>
-      <!-- End item -->
-
+        <div class="item clearfix cart_item_{{$cartItem->id}}"> <a href="#"><img src="{{$cartItem->meal_image}}"
+              alt=""></a>
+          <div class="item_desc"> <a href="#">{{Str::limit($cartItem->meal_name,14)}}</a> <span
+              class="item_price">{{$cartItem->price}} {{__('menu.SAR')}}</span> <span class="item_quantity">x
+              {{$cartItem->quantity}}</span> </div>
+        </div>
+        <!-- End item -->
       @endforeach
     </div>
 
     <!-- End cart items -->
-    <div class="shop_action clearfix"> <span class="shop_checkout_price"
-        style="color: #ffffff">{{$checkout_total_price}} {{__('menu.SAR')}}</span>
-      <button class="btn  white" style="background-color: {{$settings?->theme_colour?? '#301b72'}}"><a href="{{route('cart')}}"
-          style="color:white;">{{__('menu.View Cart')}}</a></button>
+    <div class="shop_action clearfix">
+      <span 
+        class="shop_checkout_price"
+        style="color: #ffffff"
+      >
+        {{$checkout_total_price}} {{__('menu.SAR')}}
+      </span>
+      <button 
+        class="btn white" 
+        style="background-color: {{$settings?->theme_colour?? '#301b72'}}"
+      >
+        <a 
+          href="{{route('cart')}}"
+          style="color:white;"
+        >
+          {{__('menu.View Cart')}}
+        </a>
+      </button>
     </div>
     <!-- End shop cart content -->
-
   </div>
   <!-- End shop cart -->
-
 </div>

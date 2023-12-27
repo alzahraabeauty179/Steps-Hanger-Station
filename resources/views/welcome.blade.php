@@ -6,14 +6,17 @@
   <section class="padding-100 welcome-block">
     <div class="container">
       <div class="row">
-        <div class="col-md-6"> <img class="img-responsive" src="{{asset($settings?->about_image?? '\img\about.jpg')}}" alt=""> </div>
+        <div class="col-md-6"> 
+          <img class="img-responsive" src="{{$settings?->about_image?? 'img/about.jpg'}}" alt=""> 
+        </div>
+
         <!-- Intro message -->
         <div class="col-md-5 text-center intro_message mt40">
           <!-- Head Title -->
           <div class="head_title">
             {{-- <i class="icon-intro"></i> --}}
-            <h1 style="color:{{$settings?->text_colour}}">{{ $settings?->resName()?? 'Steps' }}</h1>
-            <span class="welcome" style="color:{{$settings?->text_colour}}"> {{__('menu.Welcome to')}} </span>
+            <h1 style="color:{{$settings?->text_colour?? '#301b72'}}">{{ $settings?->resName()?? 'Steps' }}</h1>
+            <span class="welcome" style="color:{{$settings?->text_colour?? '#301b72'}}"> {{__('menu.Welcome to')}} </span>
           </div>
           <!-- End# Head Title -->
           <p style="color:#262626;text-align: justify">{{ $settings?->resDesc()?? 'No description has been added yet' }}</p>
@@ -25,7 +28,6 @@
 </div>
 </section>
 <!-- End Welcome block -->
-
 
 <!-- Food Date blocks
     ============================================= -->
@@ -43,7 +45,7 @@
           @if($settings?->cat_1)
             <div class="col-md-3 col-sm-6 col-xs-12">
               <!-- Block item -->
-              <div class="block-item"> <img src="{{'img/_breakfast.png'}}" alt="" style="=width: 135px;">
+              <div class="block-item"> <img src="img/_breakfast.png" alt="" style="=width: 135px;">
                 <h3 style="color: white">{{$settings?->catTitle1()}}</h3>
                 <p style="color: white">{{date('h:m A' , strtotime($settings?->cat_time_from_1))}} - {{date('h:m A' ,
                   strtotime($settings?->cat_time_to_1))}}</p>
@@ -54,7 +56,7 @@
           @if($settings?->cat_2)
           <div class="col-md-3 col-sm-6 col-xs-12">
             <!-- Block item -->
-            <div class="block-item"> <img src="{{'img/_lunch.png'}}" alt="" style="width: 135px;">
+            <div class="block-item"> <img src="img/_lunch.png" alt="" style="width: 135px;">
               <h3 style="color: white">{{$settings?->catTitle2()}}</h3>
               <p style="color: white">{{date('h:m A' , strtotime($settings?->cat_time_from_2))}} - {{date('h:m A' ,
                 strtotime($settings?->cat_time_to_2))}}</p>
@@ -65,7 +67,7 @@
           @if($settings?->cat_3)
           <div class="col-md-3 col-sm-6 col-xs-12">
             <!-- Block item -->
-            <div class="block-item"> <img src="{{'img/_dinner.png'}}" alt="" style="    width: 135px;">
+            <div class="block-item"> <img src="img/_dinner.png" alt="" style="    width: 135px;">
               <h3 style="color: white">{{$settings?->catTitle3()}}</h3>
               <p style="color: white">{{date('h:m A' , strtotime($settings?->cat_time_from_3))}} - {{date('h:m A' ,
                 strtotime($settings?->cat_time_to_3))}}</p>
@@ -74,43 +76,42 @@
           </div>
           @endif
           @if($settings?->cat_4)
-          <div class="col-md-3 col-sm-6 col-xs-12">
-            <!-- Block item -->
-            <div class="block-item"> <img src="{{'img/_dessert.png'}}" alt="" style="    width: 135px;">
-              <h3 style="color: white">{{$settings?->catTitle4()}}</h3>
-              <p style="color: white">{{date('h:m A' , strtotime($settings?->cat_time_from_4))}} - {{date('h:m A' ,
-                strtotime($settings?->cat_time_to_4))}}</p>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <!-- Block item -->
+              <div class="block-item"> <img src="img/_dessert.png" alt="" style="    width: 135px;">
+                <h3 style="color: white">{{$settings?->catTitle4()}}</h3>
+                <p style="color: white">{{date('h:m A' , strtotime($settings?->cat_time_from_4))}} - {{date('h:m A' ,
+                  strtotime($settings?->cat_time_to_4))}}</p>
+              </div>
+              <!-- End Block item -->
             </div>
-            <!-- End Block item -->
-          </div>
           @endif
-
         </div>
       </div>
     </div>
     <!-- End bg transparent -->
   </div>
   <!-- End Bg Parallax -->
-
 </section>
 @endif
 <!-- End date blocks-->
 <!-- Masonry Menu
     ============================================= -->
 <section class="masonry_menu padding-100 text-center ">
-
   <!-- Head Title -->
   <div class="head_title">
     {{-- <i class="icon-intro"></i> --}}
-    <h1 style="color:{{$settings?->text_colour?? '#301b72'}}"> {{__('menu.Menu Meals')}} {{$settings?->resName()?? 'Steps'}}</h1>
-    <span class="welcome" style="color:#262626">Choose & Taste</span>
+    <h1 style="color:{{$settings?->text_colour?? '#301b72'}}"> 
+      {{__('menu.Menu Meals')}} {{$settings?->resName()?? 'Steps'}}
+    </h1>
+    <span class="welcome" style="color:#262626">{{ __('Choose & Taste') }}</span>
   </div>
   <!-- End# Head Title -->
 
   <!-- Menu Bar -->
-  <div class="menu-bar  mb60" style="background-color:{{$settings?->theme_colour?? '#301b72'?? '#301b72'}}">
+  <div class="menu-bar mb60" style="background-color:{{$settings?->theme_colour?? '#301b72'}}">
     <!-- menu Filter
-                    ============================================= -->
+        ============================================= -->
     <ul id="menu-fillter" class="clearfix" style="direction: initial">
       @foreach($menuCategories as $menuCategory)
         <li><a href="#" data-filter=".pf-{{$menuCategory->id}}"
@@ -123,10 +124,10 @@
   </div>
   <!-- End menu bar -->
   <!-- Menu Items
-                    ============================================= -->
+      ============================================= -->
   <div class="container">
     <!-- Menu Items Masonary Content -->
-    <div id="menu-items" class="masonry-content dark clearfix ">
+    <div id="menu-items" class="masonry-content dark clearfix">
       <div class="row">
         @foreach($meals as $meal)
           <!-- Menu Item -->
@@ -295,11 +296,17 @@
               </div>
             </div>
 
-
             <div class="row element">
               <div class="loading2"></div>
-              <button class="btn btn-gold white" onclick="reservation()" id="reser-submit" style="background-color:{{$settings?->theme_colour?? '#301b72'}};margin-top: 25
-px; color: white">{{__('menu.BOOK YOUR TABLE')}}</button>
+
+              <button 
+                class="btn btn-gold white" 
+                onclick="reservation()" 
+                id="reser-submit" 
+                style="background-color:{{$settings?->theme_colour?? '#301b72'}};margin-top: 25px; color: white"
+              >
+                {{__('menu.BOOK YOUR TABLE')}}
+              </button>
             </div>
           </form>
           <!-- End reserv home -->
@@ -316,22 +323,30 @@ px; color: white">{{__('menu.BOOK YOUR TABLE')}}</button>
 </section>
 <!-- End RESERVATION -->
 
-
 <!-- Extra touch Block
     ============================================= -->
 <section class="extra_touch padding-100 text-center">
   <div class="container">
     <div class="row">
-      <h2>{{__('menu.Come')}} {{__('menu.&')}} <span
-          style="color:{{$settings?->text_colour}}">{{__('menu.Experiences')}}</span>
-        {{__('menu.our best of world class cuisine')}}</h2>
-      <a href="{{'/contact'}}" class="btn  btn-gold "
-        style="background-color:{{$settings?->theme_colour?? '#301b72'}};color:#EDEDED">{{__('menu.GET IN TOUCH')}}</a>
+      <h2>
+        {{__('menu.Come')}} {{__('menu.&')}} 
+        <span style="color:{{$settings?->text_colour}}">
+          {{__('menu.Experiences')}}
+        </span>
+        {{__('menu.our best of world class cuisine')}}
+      </h2>
+      <a 
+        href="/contact" class="btn btn-gold"
+        style="background-color:{{$settings?->theme_colour?? '#301b72'}};color:#EDEDED"
+      >
+        {{__('menu.GET IN TOUCH')}}
+      </a>
     </div>
   </div>
 </section>
 <!-- End extra touch -->
-</div>
+
+<!-- </div> -->
 <!-- App
     ============================================= -->
 {{-- <section id="slide-3-5" class="app dark">--}}
